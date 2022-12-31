@@ -5,6 +5,8 @@
 # change "zeos" to whatever your username is pleaseeeeeeee
 
 cp -TRv nvim/ /home/zeos/.config/nvim/
+cp -TRv picom/ /home/zeos/.config/picom/
+cp -TRv st/ /home/zeos/.config/st/
 
 cp -TRv Wallpapers/ /home/zeos/Pictures/Wallpapers/
 
