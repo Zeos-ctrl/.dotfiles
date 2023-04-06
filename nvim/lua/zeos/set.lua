@@ -10,8 +10,6 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
-vim.opt.wrap = false
-
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
@@ -42,3 +40,13 @@ vim.opt.colorcolumn = "80"
 vim.g.spelllang=en
 
 vim.g.mapleader = " "
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+    pattern = "*.tex",
+    command = "silent! :!latexmk -lualatex --interaction=batchmode -shell-escape"
+})
+
+vim.api.nvim_create_autocmd("BufReadPost", {
+    pattern = "*.tex",
+    command = "silent! :!llpp.inotify main.pdf &"
+})

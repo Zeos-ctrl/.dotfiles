@@ -52,5 +52,7 @@ return require('packer').startup(function(use)
     use("romgrk/nvim-treesitter-context")
     -- Latex and Markdown previewer
     use 'emakman/neovim-latex-previewer'
-    use 'ellisonleao/glow.nvim'
+    use {"ellisonleao/glow.nvim", config = function() require("glow").setup() end}
+    -- Rust
+    use 'simrat39/rust-tools.nvim'
 end)

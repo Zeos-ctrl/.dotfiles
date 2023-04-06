@@ -1,12 +1,24 @@
 #!/bin/bash
+#
+# Install Script for repo
 
-# Trust me it works on my system, im to lazy to manually copy and paste when
-# i make new changes so this script does it for me, if your doing the same
-# change "zeos" to whatever your username is pleaseeeeeeee
+mkdir $HOME/WM
 
-cp -TRv nvim/ /home/zeos/.config/nvim/
-cp -TRv picom/ /home/zeos/.config/picom/
-cp -TRv st/ /home/zeos/.config/st/
+echo "Copying over the configs"
 
-cp -TRv Wallpapers/ /home/zeos/Pictures/Wallpapers/
+cp -r nvim $HOME/.config
+cp -r picom $HOME/.config
+cp -r st $HOME/.config
+cp -r Wallpapers $HOME/Pictures
+cp -r dwm $HOME/WM
+cp -r dmenu $HOME/WM
+cp -r dwmblocks $HOME/WM
+
+echo "Installing programs"
+
+PROGRAMS="nitrogen picom neovim"
+
+pacman -Syyuu
+
+pacman -Sy &PROGRAMS
 
