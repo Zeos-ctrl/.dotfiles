@@ -24,3 +24,14 @@ pacman -Syyuu
 
 pacman -Sy &PROGRAMS
 
+echo "Building the Window Manager"
+
+cd $HOME/dwm
+
+make clean install
+
+cd $HOME/dwmblocks
+
+make clean install
+
+echo "Done! Reboot for changes to take effect..."
