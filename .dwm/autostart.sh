@@ -1,5 +1,5 @@
 #!/bin/sh
 
 nitrogen --restore &
-picom --config /home/zeos/.config/picom/picom.conf &
+picom --config $HOME/.config/picom/picom.conf &
 dwmblocks &

@@ -12,9 +12,9 @@ cp -r dmenu $HOME
 
 echo "Cloning repositories"
 
-git clone git@github.com:Zeos-ctrl/dwm.git $HOME
+git clone https://github.com/Zeos-ctrl/dwm.git $HOME
 
-git clone git@github.com:Zeos-ctrl/dwmblocks.git $HOME
+git clone https://github.com/Zeos-ctrl/dwmblocks.git $HOME
 
 echo "Installing programs"
 
@@ -22,7 +22,7 @@ PROGRAMS="nitrogen picom neovim"
 
 pacman -Syyuu
 
-pacman -Sy &PROGRAMS
+pacman -Sy $PROGRAMS
 
 echo "Building the Window Manager"
 
