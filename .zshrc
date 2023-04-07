@@ -101,5 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias la="ls -la"
 alias cl="clear"
+alias ksi="mpv ~/Videos/ksi.webm"
+alias yt="ytfzf -T mpv --show-thumbnails"
 
 pfetch
