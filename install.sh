@@ -18,7 +18,7 @@ git clone https://github.com/Zeos-ctrl/dwmblocks.git $HOME
 
 echo "Installing programs"
 
-PROGRAMS="nitrogen picom neovim"
+PROGRAMS="nitrogen picom neovim pulseaudio pavucontrol alsa-lib alsa-utils acpilight xorg scrot"
 
 pacman -Syyuu
 
@@ -33,5 +33,11 @@ make clean install
 cd $HOME/dwmblocks
 
 make clean install
+
+cd $HOME/dmenu
+
+make clean install
+
+echo "exec dwm" >> .xinitrc
 
 echo "Done! Reboot for changes to take effect..."

@@ -18,7 +18,7 @@ cp -r $HOME/.config/nvim .
 cp -r $HOME/.config/picom .
 cp -r $HOME/.config/st .
 cp -r $HOME/Pictures/Wallpapers .
-cp -r $HOME/Cloned-repos/dmenu .
+cp -r $HOME/dmenu .
 cp -r $HOME/.dwm .
 cp $HOME/.zshrc .
 
