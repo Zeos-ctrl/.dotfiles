@@ -1,5 +1,6 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
+vim.opt.guicursor = "i-ci:ver30-iCursor"
 
 vim.opt.errorbells = false
 
@@ -50,3 +51,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     pattern = "*.tex",
     command = "silent! :!llpp.inotify main.pdf &"
 })
+vim.g.openscad_auto_open = true
+
+-- Start NERDTree and put the cursor back in the other window.
+-- vim.cmd([[autocmd VimEnter * NERDTree | wincmd p]])

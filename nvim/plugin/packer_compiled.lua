@@ -110,6 +110,7 @@ _G.packer_plugins = {
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["glow.nvim"] = {
+    config = { "\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tglow\frequire\0" },
     loaded = true,
     path = "/home/zeos/.local/share/nvim/site/pack/packer/start/glow.nvim",
     url = "https://github.com/ellisonleao/glow.nvim"
@@ -179,6 +180,12 @@ _G.packer_plugins = {
     path = "/home/zeos/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
     url = "https://github.com/romgrk/nvim-treesitter-context"
   },
+  ["openscad.nvim"] = {
+    config = { "\27LJ\2\nU\0\0\3\0\5\0\b6\0\0\0'\2\1\0B\0\2\0016\0\2\0009\0\3\0+\1\2\0=\1\4\0K\0\1\0\27openscad_load_snippets\6g\bvim\ropenscad\frequire\0" },
+    loaded = true,
+    path = "/home/zeos/.local/share/nvim/site/pack/packer/start/openscad.nvim",
+    url = "https://github.com/salkin-mada/openscad.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/zeos/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -227,6 +234,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: openscad.nvim
+time([[Config for openscad.nvim]], true)
+try_loadstring("\27LJ\2\nU\0\0\3\0\5\0\b6\0\0\0'\2\1\0B\0\2\0016\0\2\0009\0\3\0+\1\2\0=\1\4\0K\0\1\0\27openscad_load_snippets\6g\bvim\ropenscad\frequire\0", "config", "openscad.nvim")
+time([[Config for openscad.nvim]], false)
+-- Config for: glow.nvim
+time([[Config for glow.nvim]], true)
+try_loadstring("\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tglow\frequire\0", "config", "glow.nvim")
+time([[Config for glow.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

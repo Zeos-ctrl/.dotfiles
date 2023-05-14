@@ -34,6 +34,7 @@ return require('packer').startup(function(use)
     use 'tpope/vim-fugitive'
     -- UI
     use("onsails/lspkind-nvim")
+    use("preservim/nerdtree")
     -- Telescope
     use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -55,4 +56,14 @@ return require('packer').startup(function(use)
     use {"ellisonleao/glow.nvim", config = function() require("glow").setup() end}
     -- Rust
     use 'simrat39/rust-tools.nvim'
+    -- CAD deez nuts
+    use {
+        'salkin-mada/openscad.nvim',
+        config = function ()
+            require('openscad')
+            -- load snippets, note requires
+            vim.g.openscad_load_snippets = true
+        end,
+        requires = 'L3MON4D3/LuaSnip'
+    }
 end)
