@@ -9,6 +9,7 @@ cp -r picom $HOME/.config
 cp -r st $HOME/.config
 cp -r Wallpapers $HOME/Pictures
 cp -r dmenu $HOME
+cp -r .dwm $HOME
 
 echo "Cloning repositories"
 

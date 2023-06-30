@@ -4,6 +4,8 @@ return require('packer').startup(function(use)
     -- Colourscheme
     use("gruvbox-community/gruvbox")
     use("sainnhe/gruvbox-material")
+    use("sainnhe/everforest")
+    use("ryanoasis/vim-devicons")
     -- LSP server
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -26,6 +28,8 @@ return require('packer').startup(function(use)
             {'rafamadriz/friendly-snippets'},
         }
     }
+    use 'folke/trouble.nvim'
+    use 'nvim-tree/nvim-web-devicons'
     use 'nvim-lua/lsp_extensions.nvim'
     -- Airline
     use 'vim-airline/vim-airline'
@@ -34,7 +38,11 @@ return require('packer').startup(function(use)
     use 'tpope/vim-fugitive'
     -- UI
     use("onsails/lspkind-nvim")
+    -- NerdTree
     use("preservim/nerdtree")
+    use("Xuyuanp/nerdtree-git-plugin")
+    use("PhilRunninger/nerdtree-buffer-ops")
+    use("PhilRunninger/nerdtree-visual-selection")
     -- Telescope
     use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -53,6 +61,7 @@ return require('packer').startup(function(use)
     use("romgrk/nvim-treesitter-context")
     -- Latex and Markdown previewer
     use 'emakman/neovim-latex-previewer'
+    use 'lervag/vimtex'
     use {"ellisonleao/glow.nvim", config = function() require("glow").setup() end}
     -- Rust
     use 'simrat39/rust-tools.nvim'

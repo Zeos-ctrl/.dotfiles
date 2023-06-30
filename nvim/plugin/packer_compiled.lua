@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/zeos/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  everforest = {
+    loaded = true,
+    path = "/home/zeos/.local/share/nvim/site/pack/packer/start/everforest",
+    url = "https://github.com/sainnhe/everforest"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/zeos/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -160,6 +165,26 @@ _G.packer_plugins = {
     path = "/home/zeos/.local/share/nvim/site/pack/packer/start/neovim-latex-previewer",
     url = "https://github.com/emakman/neovim-latex-previewer"
   },
+  nerdtree = {
+    loaded = true,
+    path = "/home/zeos/.local/share/nvim/site/pack/packer/start/nerdtree",
+    url = "https://github.com/preservim/nerdtree"
+  },
+  ["nerdtree-buffer-ops"] = {
+    loaded = true,
+    path = "/home/zeos/.local/share/nvim/site/pack/packer/start/nerdtree-buffer-ops",
+    url = "https://github.com/PhilRunninger/nerdtree-buffer-ops"
+  },
+  ["nerdtree-git-plugin"] = {
+    loaded = true,
+    path = "/home/zeos/.local/share/nvim/site/pack/packer/start/nerdtree-git-plugin",
+    url = "https://github.com/Xuyuanp/nerdtree-git-plugin"
+  },
+  ["nerdtree-visual-selection"] = {
+    loaded = true,
+    path = "/home/zeos/.local/share/nvim/site/pack/packer/start/nerdtree-visual-selection",
+    url = "https://github.com/PhilRunninger/nerdtree-visual-selection"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/zeos/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -211,6 +236,11 @@ _G.packer_plugins = {
     path = "/home/zeos/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "/home/zeos/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
+  },
   undotree = {
     loaded = true,
     path = "/home/zeos/.local/share/nvim/site/pack/packer/start/undotree",
@@ -226,22 +256,32 @@ _G.packer_plugins = {
     path = "/home/zeos/.local/share/nvim/site/pack/packer/start/vim-airline-themes",
     url = "https://github.com/vim-airline/vim-airline-themes"
   },
+  ["vim-devicons"] = {
+    loaded = true,
+    path = "/home/zeos/.local/share/nvim/site/pack/packer/start/vim-devicons",
+    url = "https://github.com/ryanoasis/vim-devicons"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/zeos/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  vimtex = {
+    loaded = true,
+    path = "/home/zeos/.local/share/nvim/site/pack/packer/start/vimtex",
+    url = "https://github.com/lervag/vimtex"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: openscad.nvim
-time([[Config for openscad.nvim]], true)
-try_loadstring("\27LJ\2\nU\0\0\3\0\5\0\b6\0\0\0'\2\1\0B\0\2\0016\0\2\0009\0\3\0+\1\2\0=\1\4\0K\0\1\0\27openscad_load_snippets\6g\bvim\ropenscad\frequire\0", "config", "openscad.nvim")
-time([[Config for openscad.nvim]], false)
 -- Config for: glow.nvim
 time([[Config for glow.nvim]], true)
 try_loadstring("\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tglow\frequire\0", "config", "glow.nvim")
 time([[Config for glow.nvim]], false)
+-- Config for: openscad.nvim
+time([[Config for openscad.nvim]], true)
+try_loadstring("\27LJ\2\nU\0\0\3\0\5\0\b6\0\0\0'\2\1\0B\0\2\0016\0\2\0009\0\3\0+\1\2\0=\1\4\0K\0\1\0\27openscad_load_snippets\6g\bvim\ropenscad\frequire\0", "config", "openscad.nvim")
+time([[Config for openscad.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

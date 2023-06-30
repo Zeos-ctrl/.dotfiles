@@ -49,9 +49,6 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 
 vim.api.nvim_create_autocmd("BufReadPost", {
     pattern = "*.tex",
-    command = "silent! :!llpp.inotify main.pdf &"
+    command = "silent! :!llpp.inotify *.pdf &"
 })
 vim.g.openscad_auto_open = true
-
--- Start NERDTree and put the cursor back in the other window.
--- vim.cmd([[autocmd VimEnter * NERDTree | wincmd p]])
