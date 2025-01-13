@@ -23,7 +23,7 @@ require "nvim-treesitter.configs".setup {
         lint_events = {"BufWrite", "CursorHold"},
     },
     -- A list of parser names, or "all"
-    ensure_installed = { "help", "javascript", "typescript", "c", "lua", "rust", "latex" },
+    ensure_installed = { "go", "javascript", "typescript", "c", "lua", "rust", "latex", "sql", "python", "html" },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
@@ -34,8 +34,8 @@ require "nvim-treesitter.configs".setup {
 
     highlight = {
         -- `false` will disable the whole extension
-        enable = true,
-        disable = {"latex"},
+        enable = false,
+        disable = {"latex", "rust"},
 
         -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
         -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
@@ -44,4 +44,4 @@ require "nvim-treesitter.configs".setup {
         additional_vim_regex_highlighting = false,
     },
 }
-
+require("ibl").setup()

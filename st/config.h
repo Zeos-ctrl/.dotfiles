@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrainsMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
+static char *font = "JetBrainsMono Nerd Font Mono:pixelsize=14:antialias=true:autohint=true";
 static int borderpx = 0;
 
 /*
@@ -104,22 +104,22 @@ static const char *colorname[] = {
   /* 8 normal colors */
   [0] = "#1D2021", /* hard contrast: #1d2021 / soft contrast: #32302f */
   [1] = "#CC241D", /* red     */
-  [2] = "#8EC07C", /* green   */
-  [3] = "#FE8019", /* orange  */
-  [4] = "#7DAEA3", /* blue    */
-  [5] = "#D3869B", /* magenta */
-  [6] = "#FABD2F", /* yellow    */
-  [7] = "#A89984", /* white   */
+  [2] = "#B8BB26", /* green   */
+  [3] = "#D79921", /* yellow    */
+  [4] = "#689D6A", /* cyan    */
+  [5] = "#83A598", /* blue */
+  [6] = "#D65D0E", /* orange  */
+  [7] = "#EBDBB2", /* white   */
 
   /* 8 bright colors */
-  [8]  = "#7F7F7F", /* grey   */
+  [8]  = "#928374", /* grey   */
   [9]  = "#FB4834", /* red     */
-  [10] = "#bbc585", /* green   */
-  [11] = "#D65D0E", /* orange  */
-  [12] = "#83A598", /* blue    */
-  [13] = "#B16286", /* magenta */
-  [14] = "#D79921", /* yellow    */
-  [15] = "#EBDBB2", /* white   */
+  [10] = "#B8BB26", /* green   */
+  [11] = "#FABD2F", /* yellow    */
+  [12] = "#8EC07C", /* cyan    */
+  [13] = "#83A598", /* blue    */
+  [14] = "#FE8019", /* orange  */
+  [15] = "#FBF1C7", /* white   */
 };
 
 
@@ -168,6 +168,8 @@ static unsigned int defaultattr = 11;
  */
 static uint forcemousemod = ShiftMask;
 
+#include "autocomplete.h"
+
 /*
  * Internal mouse shortcuts.
  * Beware that overloading Button1 will disable the selection.
@@ -187,14 +189,16 @@ static MouseShortcut mshortcuts[] = {
 #define MODKEY Mod4Mask
 #define TERMMOD (ControlMask|ShiftMask)
 
+#define ACMPL_MOD ControlMask|Mod1Mask
+
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
 	{ XK_ANY_MOD,           XK_Break,       sendbreak,      {.i =  0} },
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
-	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
+	{ MODKEY,              XK_equal,       zoom,           {.f = +1} },
+	{ MODKEY,              XK_minus,        zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },

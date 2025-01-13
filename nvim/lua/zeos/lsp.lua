@@ -27,10 +27,7 @@ rt.inlay_hints.enable()
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-  'tsserver',
-  'eslint',
   'rust_analyzer',
-  'clangd',
 })
 
 -- Fix Undefined global 'vim'

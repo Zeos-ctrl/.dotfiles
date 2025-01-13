@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/zeos/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/zeos/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/zeos/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/zeos/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/zeos/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/home/zeos/.cache/nvim/packer_hererocks/2.1.1731601260/share/lua/5.1/?.lua;/home/zeos/.cache/nvim/packer_hererocks/2.1.1731601260/share/lua/5.1/?/init.lua;/home/zeos/.cache/nvim/packer_hererocks/2.1.1731601260/lib/luarocks/rocks-5.1/?.lua;/home/zeos/.cache/nvim/packer_hererocks/2.1.1731601260/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/zeos/.cache/nvim/packer_hererocks/2.1.1731601260/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -104,11 +104,6 @@ _G.packer_plugins = {
     path = "/home/zeos/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  everforest = {
-    loaded = true,
-    path = "/home/zeos/.local/share/nvim/site/pack/packer/start/everforest",
-    url = "https://github.com/sainnhe/everforest"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/zeos/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -135,6 +130,16 @@ _G.packer_plugins = {
     path = "/home/zeos/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
   },
+  ["image.nvim"] = {
+    loaded = true,
+    path = "/home/zeos/.local/share/nvim/site/pack/packer/start/image.nvim",
+    url = "https://github.com/3rd/image.nvim"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/zeos/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/zeos/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -160,30 +165,10 @@ _G.packer_plugins = {
     path = "/home/zeos/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  ["neovim-latex-previewer"] = {
+  ["molten-nvim"] = {
     loaded = true,
-    path = "/home/zeos/.local/share/nvim/site/pack/packer/start/neovim-latex-previewer",
-    url = "https://github.com/emakman/neovim-latex-previewer"
-  },
-  nerdtree = {
-    loaded = true,
-    path = "/home/zeos/.local/share/nvim/site/pack/packer/start/nerdtree",
-    url = "https://github.com/preservim/nerdtree"
-  },
-  ["nerdtree-buffer-ops"] = {
-    loaded = true,
-    path = "/home/zeos/.local/share/nvim/site/pack/packer/start/nerdtree-buffer-ops",
-    url = "https://github.com/PhilRunninger/nerdtree-buffer-ops"
-  },
-  ["nerdtree-git-plugin"] = {
-    loaded = true,
-    path = "/home/zeos/.local/share/nvim/site/pack/packer/start/nerdtree-git-plugin",
-    url = "https://github.com/Xuyuanp/nerdtree-git-plugin"
-  },
-  ["nerdtree-visual-selection"] = {
-    loaded = true,
-    path = "/home/zeos/.local/share/nvim/site/pack/packer/start/nerdtree-visual-selection",
-    url = "https://github.com/PhilRunninger/nerdtree-visual-selection"
+    path = "/home/zeos/.local/share/nvim/site/pack/packer/start/molten-nvim",
+    url = "https://github.com/benlubas/molten-nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -204,6 +189,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/zeos/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
     url = "https://github.com/romgrk/nvim-treesitter-context"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/zeos/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["openscad.nvim"] = {
     config = { "\27LJ\2\nU\0\0\3\0\5\0\b6\0\0\0'\2\1\0B\0\2\0016\0\2\0009\0\3\0+\1\2\0=\1\4\0K\0\1\0\27openscad_load_snippets\6g\bvim\ropenscad\frequire\0" },
@@ -230,6 +220,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/zeos/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
+  },
+  ["tailwind-tools.nvim"] = {
+    loaded = true,
+    path = "/home/zeos/.local/share/nvim/site/pack/packer/start/tailwind-tools.nvim",
+    url = "https://github.com/luckasRanarison/tailwind-tools.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -270,6 +265,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/zeos/.local/share/nvim/site/pack/packer/start/vimtex",
     url = "https://github.com/lervag/vimtex"
+  },
+  ["wezterm.nvim"] = {
+    loaded = true,
+    path = "/home/zeos/.local/share/nvim/site/pack/packer/start/wezterm.nvim",
+    url = "https://github.com/willothy/wezterm.nvim"
   }
 }
 

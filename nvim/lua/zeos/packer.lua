@@ -4,7 +4,6 @@ return require('packer').startup(function(use)
     -- Colourscheme
     use("gruvbox-community/gruvbox")
     use("sainnhe/gruvbox-material")
-    use("sainnhe/everforest")
     use("ryanoasis/vim-devicons")
     -- LSP server
     use {
@@ -38,14 +37,10 @@ return require('packer').startup(function(use)
     use 'tpope/vim-fugitive'
     -- UI
     use("onsails/lspkind-nvim")
-    -- NerdTree
-    use("preservim/nerdtree")
-    use("Xuyuanp/nerdtree-git-plugin")
-    use("PhilRunninger/nerdtree-buffer-ops")
-    use("PhilRunninger/nerdtree-visual-selection")
+    use("lukas-reineke/indent-blankline.nvim")
     -- Telescope
     use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    'nvim-telescope/telescope.nvim', tag = '0.1.x',
     -- or                            , branch = '0.1.x',
       requires = { {'nvim-lua/plenary.nvim'} }
     }
@@ -60,7 +55,6 @@ return require('packer').startup(function(use)
     use("nvim-treesitter/playground")
     use("romgrk/nvim-treesitter-context")
     -- Latex and Markdown previewer
-    use 'emakman/neovim-latex-previewer'
     use 'lervag/vimtex'
     use {"ellisonleao/glow.nvim", config = function() require("glow").setup() end}
     -- Rust
@@ -75,4 +69,10 @@ return require('packer').startup(function(use)
         end,
         requires = 'L3MON4D3/LuaSnip'
     }
+    -- Css
+    use 'luckasRanarison/tailwind-tools.nvim'
+    -- Python
+    use 'benlubas/molten-nvim'
+    use '3rd/image.nvim'
+    use 'willothy/wezterm.nvim'
 end)

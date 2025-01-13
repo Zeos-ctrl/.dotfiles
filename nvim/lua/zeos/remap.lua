@@ -16,3 +16,8 @@ nnoremap("<leader>]","<cmd>NextPreviewMode<CR>")
 nnoremap ("<leader>n",":NERDTreeFocus<CR>")
 nnoremap ("<C-n>",":NERDTree<CR>")
 nnoremap ("<C-f>",":NERDTreeFind<CR>")
+
+-- Trouble
+vim.keymap.set("n", "<leader>d", "<cmd>TroubleToggle<cr>",
+  {silent = true, noremap = true}
+)
