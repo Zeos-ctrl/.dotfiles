@@ -15,6 +15,11 @@ tmux
 vlc
 ytfzf
 okteta
-nerd-fonts-complete
 ttf-montserrat
 ttf-ibm-plex
+xorg-server
+xorg-xinit
+libx11
+libxinerama
+libxft
+webkit2gtk

@@ -15,28 +15,22 @@ cp -r .dwm $HOME
 
 echo "Installing programs"
 
-PROGRAMS="nitrogen picom neovim pulseaudio pavucontrol alsa-lib alsa-utils acpilight xorg scrot"
+pacman -Syu
 
-pacman -Syyuu
-
-pacman -Sy $PROGRAMS
+cat pacman.list | xargs sudo pacman -S -y
 
 echo "Building the Window Manager"
 
 cd $HOME/system/dwm
-
 make clean install
 
 cd $HOME/system/dwmblocks
-
 make clean install
 
 cd $HOME/system/dmenu
-
 make clean install
 
 cd $HOME/system/st
-
 make clean install
 
 echo "exec dwm" >> .xinitrc
