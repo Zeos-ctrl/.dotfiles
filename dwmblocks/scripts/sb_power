@@ -1,0 +1,110 @@
+#!/bin/sh
+
+batterylvl=""
+batterychg=""
+notify_send_msg="There is no battery on this computer"
+if [ -e /sys/class/power_supply/BAT0 ]; then
+    batterylvl=$(cat /sys/class/power_supply/BAT0/capacity)
+    batterychg=$(cat /sys/class/power_supply/BAT0/status)
+    notify_send_msg="The battery is $batterychg : $batterylvl%"
+fi
+
+case $BUTTON in
+    1) notify-send "$notify_send_msg";;
+    2) "$TERMINAL" -e "$EDITOR" "$0" & ;;
+    3) st -e bash -c 'acpi -Vi; read' & ;;
+esac
+
+if [ ! -f /tmp/notify_send_flag_info ]; then echo true > /tmp/notify_send_flag_info; fi
+if [ ! -f /tmp/notify_send_flag_warn ]; then echo true > /tmp/notify_send_flag_warn; fi
+if [ ! -f /tmp/notify_send_flag_crit ]; then echo true > /tmp/notify_send_flag_crit; fi
+
+if [ -e /sys/class/power_supply/BAT0 ]; then
+    if   [ "$batterychg" = "Discharging" ] || [ "$batterychg" = "discharging" ]; then
+    	if   [ "$batterylvl" -lt 5   ]; then
+            if [ "$(cat /tmp/notify_send_flag_crit)" = "true" ]; then
+                echo false > /tmp/notify_send_flag_crit
+                notify-send -u critical "Battery level" "less than 5%"
+            fi
+    		echo "ﮤ __$batterylvl%"
+    	elif [ "$batterylvl" -lt 10  ]; then
+            if [ "$(cat /tmp/notify_send_flag_warn)" = "true" ]; then
+                echo false > /tmp/notify_send_flag_warn
+                notify-send -u normal "Battery level" "less than 10%"
+            fi
+    		echo "ﮤ __$batterylvl%"
+    	elif [ "$batterylvl" -lt 15  ]; then
+            if [ "$(cat /tmp/notify_send_flag_info)" = "true" ]; then
+                echo false > /tmp/notify_send_flag_info
+                notify-send -u low "Battery level" "less than 15%"
+            fi
+    		echo "ﮤ $batterylvl%"
+    	elif [ "$batterylvl" -lt 25  ]; then
+    		echo "ﮤ $batterylvl%"
+    	elif [ "$batterylvl" -lt 35  ]; then
+    		echo "ﮤ $batterylvl%"
+    	elif [ "$batterylvl" -lt 45  ]; then
+    		echo "ﮤ $batterylvl%"
+    	elif [ "$batterylvl" -lt 55  ]; then
+    		echo "ﮤ $batterylvl%"
+    	elif [ "$batterylvl" -lt 65  ]; then
+    		echo "ﮤ $batterylvl%"
+    	elif [ "$batterylvl" -lt 75  ]; then
+    		echo "ﮤ $batterylvl%"
+    	elif [ "$batterylvl" -lt 85  ]; then
+    		echo "ﮤ $batterylvl%"
+    	elif [ "$batterylvl" -lt 95  ]; then
+    		echo "ﮤ $batterylvl%"
+    	elif [ "$batterylvl" -lt 100 ]; then
+    		echo "ﮤ $batterylvl%"
+    	elif [ "$batterylvl" -eq 100 ]; then
+    		echo "ﮤ $batterylvl%"
+    	fi
+    elif [ "$batterychg" = "Full" ] || [ "$batterychg" = "full" ]; then
+    	echo "ﮣ $batterylvl%"
+    elif [ "$batterychg" = "Not charging" ] || [ "$batterychg" = "not charging" ]; then
+    	echo "  $batterylvl%"
+    elif [ "$batterychg" = "Charging" ] || [ "$batterychg" = "charging" ]; then
+        if [ "$(cat /tmp/notify_send_flag_info)" = "false" ]; then
+            echo true > /tmp/notify_send_flag_info
+        fi
+        if [ "$(cat /tmp/notify_send_flag_warn)" = "false" ]; then
+            echo true > /tmp/notify_send_flag_warn
+        fi
+        if [ "$(cat /tmp/notify_send_flag_crit)" = "false" ]; then
+            echo true > /tmp/notify_send_flag_crit
+        fi
+    	if   [ "$batterylvl" -lt 5   ]; then
+    		echo "ﮣ _$batterylvl%"
+    	elif [ "$batterylvl" -lt 10  ]; then
+    		echo "ﮣ _$batterylvl%"
+    	elif [ "$batterylvl" -lt 15  ]; then
+    		echo "ﮣ $batterylvl%"
+    	elif [ "$batterylvl" -lt 25  ]; then
+    		echo "ﮣ $batterylvl%"
+    	elif [ "$batterylvl" -lt 35  ]; then
+    		echo "ﮣ $batterylvl%"
+    	elif [ "$batterylvl" -lt 45  ]; then
+    		echo "ﮣ $batterylvl%"
+    	elif [ "$batterylvl" -lt 55  ]; then
+    		echo "ﮣ $batterylvl%"
+    	elif [ "$batterylvl" -lt 65  ]; then
+    		echo "ﮣ $batterylvl%"
+    	elif [ "$batterylvl" -lt 75  ]; then
+    		echo "ﮣ $batterylvl%"
+    	elif [ "$batterylvl" -lt 85  ]; then
+    		echo "ﮣ $batterylvl%"
+    	elif [ "$batterylvl" -lt 95  ]; then
+    		echo "ﮣ $batterylvl%"
+    	elif [ "$batterylvl" -lt 100 ]; then
+    		echo "ﮣ $batterylvl%"
+    	elif [ "$batterylvl" -eq 100 ]; then
+    		echo "ﮣ $batterylvl%"
+    	fi
+    elif [ "$batterychg" = "Unknown" ] || [ "$batterychg" = "unknown" ]; then
+    		echo "  __0%"
+    fi
+else
+    echo "ﮣ"
+fi
+
