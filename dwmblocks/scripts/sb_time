@@ -1,8 +1,3 @@
 #!/bin/sh
 
-case $BUTTON in
-	1) st -e calcurse ;;
-	3) st -e nvim /home/zeos/dwmblocks/scripts/sb_time ;;
-esac
-
 date '+%b %d (%a) %I:%M%p'

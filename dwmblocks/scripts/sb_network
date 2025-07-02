@@ -1,8 +1,6 @@
 #!/bin/sh
 case $BUTTON in
-	1) st -e nmcli device wifi list ;;
-	2) st -e nmtui ;;
-	3) st -e nvim /home/zeos/Github/dwmblocks/scripts/sb_network ;;
+	1) st -e nmtui ;;
 esac
 
 if grep -xq 'up' /sys/class/net/w*/operstate 2>/dev/null ; then

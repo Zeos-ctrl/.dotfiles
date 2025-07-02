@@ -4,6 +4,10 @@
 # displays that information in the statusbar
 #
 # https://www.maketecheasier.com/ip-address-geolocation-lookups-linux/
+case $BUTTON in
+	1) st -e gpclient ;;
+    3) st -e sudo tailscale set --ssh ;;
+esac
 
 addr="$(curl ifconfig.me 2>/dev/null)"
 location="$(geoiplookup "$addr" | sed 's/.*, //' | sed "s/flag: //;s/;.*//")"

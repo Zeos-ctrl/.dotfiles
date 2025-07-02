@@ -34,8 +34,8 @@ void setupsignals();
 void sighandler(int signum, siginfo_t *si, void *ucontext);
 int getstatus(char *str, char *last);
 void statusloop();
-void termhandler();
-void chldhandler();
+void termhandler(int sig);
+void chldhandler(int sig);
 void pstdout();
 #ifndef NO_X
 void setroot();
@@ -212,12 +212,12 @@ void sighandler(int signum, siginfo_t *si, void *ucontext)
 	}
 }
 
-void termhandler()
+void termhandler(int sig)
 {
 	statusContinue = 0;
 }
 
-void chldhandler()
+void chldhandler(int sig)
 {
 	while (0 < waitpid(-1, NULL, WNOHANG));
 }
@@ -236,9 +236,9 @@ int main(int argc, char** argv)
 #endif
 	delimLen = MIN(delimLen, strlen(delim));
 	delim[delimLen++] = '\0';
-	signal(SIGTERM, termhandler);
-	signal(SIGINT, termhandler);
-	signal(SIGCHLD, chldhandler);
+	signal(SIGTERM, (void (*)(int))termhandler);
+	signal(SIGINT, (void (*)(int))termhandler);
+	signal(SIGCHLD, (void (*)(int))chldhandler);
 	statusloop();
 #ifndef NO_X
 	XCloseDisplay(dpy);

@@ -76,18 +76,18 @@ static const Layout layouts[] = {
 #define STATUSBAR "dwmblocks"
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray2, "-nf", col_gray3, "-sb", col_primary, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray2, "-nf", col_gray3, "-sb", col_primary, "-sf", col_gray4, "-l", "5", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *scrot[] = {"scrot", "-s", NULL};
 static const char *ytfzf[] = {"ytfzf", "-D", NULL};
 static const char *ranger[] = {"st","-e","ranger", NULL};
-static const char *powermenu[] = {"/home/zeos/dwm/scripts/powermenu.sh",NULL};
-static const char *passmenu[] = {"/home/zeos/dwm/scripts/passmenu.sh",NULL};
+static const char *powermenu[] = {"/home/zeos/system/dwm/scripts/powermenu.sh",NULL};
+static const char *passmenu[] = {"/home/zeos/system/dwm/scripts/passmenu.sh",NULL};
 
 /* audio and backlight things */
 static const char *mutecmd[] = { "pactl", "set-sink-mute", "0", "toggle", NULL };
-static const char *volupcmd[] = {"/home/zeos/dwm/scripts/volumeup.sh",NULL};
-static const char *voldowncmd[] = {"/home/zeos/dwm/scripts/volumedown.sh",NULL};
+static const char *volupcmd[] = {"/home/zeos/system/dwm/scripts/volumeup.sh",NULL};
+static const char *voldowncmd[] = {"/home/zeos/system/dwm/scripts/volumedown.sh",NULL};
 static const char *updatevolume[] = {"pkill", "-RTMIN+10", "dwmblocks", NULL};
 static const char *brightnessup[] = {"xbacklight", "-inc", "10", NULL};
 static const char *brightnessdown[] = {"xbacklight", "-dec", "10", NULL};
