@@ -13,11 +13,11 @@ static const int vertpadbar         = 0;        /* vertical padding for statusba
 
 static const char *fonts[]          = { "JetBrainsMono Nerd Font Mono:size=10" };
 static const char dmenufont[]       = "JetBrainsMono Nerd Font Mono:size=10";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#1D2021";
-static const char col_gray3[]       = "#A89984";
-static const char col_gray4[]       = "#EBDBB2";
-static const char col_primary[]        = "#D65D0E";
+static const char col_gray1[]       = "#A89984";
+static const char col_gray2[]       = "#D5C4A1";
+static const char col_gray3[]       = "#EBDBB2";
+static const char col_gray4[]       = "#FBF1C7";
+static const char col_primary[]        = "#FE9019";
 static const unsigned int baralpha = 0xFF;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
